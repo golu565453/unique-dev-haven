@@ -1,34 +1,34 @@
 
 import { motion } from "framer-motion";
-import { Code, Layers, Zap, Briefcase, GraduationCap, Users } from "lucide-react";
+import { Code, Database, Server, LineChart, BarChart, Globe } from "lucide-react";
 
 const skills = [
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "Node.js", level: 80 },
-  { name: "TypeScript", level: 75 },
-  { name: "UI/UX Design", level: 70 },
-  { name: "Python", level: 65 },
+  { name: "Python", level: 95 },
+  { name: "Django", level: 90 },
+  { name: "Flask", level: 85 },
+  { name: "FastAPI", level: 80 },
+  { name: "Data Science", level: 85 },
+  { name: "Machine Learning", level: 75 },
 ];
 
 const experiences = [
   {
-    title: "Senior Frontend Developer",
-    company: "TechCorp",
+    title: "Lead Python Developer",
+    company: "TechInnovate",
     period: "2021 - Present",
-    description: "Leading the frontend development team, implementing modern web technologies and improving user experience."
+    description: "Leading backend development with Django and FastAPI, implementing efficient data processing pipelines and mentoring junior developers."
   },
   {
-    title: "Web Developer",
-    company: "Digital Solutions Inc.",
+    title: "Python Engineer",
+    company: "DataSolutions Inc.",
     period: "2019 - 2021",
-    description: "Developed responsive websites and web applications for various clients using React and Node.js."
+    description: "Developed data processing applications and APIs using Python, Flask, and pandas for various clients in the financial sector."
   },
   {
-    title: "Junior Developer",
-    company: "Startup Innovations",
+    title: "Junior Python Developer",
+    company: "Web Innovations",
     period: "2017 - 2019",
-    description: "Collaborated in agile development environment, focusing on implementing UI components and integration."
+    description: "Collaborated in agile environment, focusing on web scraping, automation and building microservices with Flask."
   }
 ];
 
@@ -80,7 +80,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            I'm a passionate developer with a keen eye for design and a dedication to creating exceptional digital experiences.
+            I'm a passionate Python developer with expertise in building robust backends, data analysis solutions, and machine learning applications.
           </motion.p>
         </div>
         
@@ -94,24 +94,24 @@ const About = () => {
           >
             <h3 className="text-xl font-semibold">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              With over 7 years of experience in web development, I've cultivated a diverse skill set that spans frontend and backend technologies. My approach integrates clean code architecture with intuitive design principles, ensuring that the applications I build are both powerful and user-friendly.
+              With over 7 years of experience as a Python developer, I've mastered the art of building efficient, scalable applications across various domains. My expertise spans web development with Django and Flask, data processing with pandas and NumPy, and machine learning implementations with scikit-learn and TensorFlow.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I believe in continuous learning and staying at the forefront of technological advancements. Each project is an opportunity to refine my craft and explore new possibilities in creating seamless digital experiences.
+              I believe in writing clean, maintainable code and staying current with the latest Python ecosystem developments. Every project is an opportunity to solve complex problems with elegant Python solutions.
             </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
               <div className="p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center text-center">
-                <Code className="text-accent mb-2" size={24} />
+                <Code className="text-blue-400 mb-2" size={24} />
                 <span className="text-sm font-medium">Clean Code</span>
               </div>
               <div className="p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center text-center">
-                <Layers className="text-accent mb-2" size={24} />
-                <span className="text-sm font-medium">Architecture</span>
+                <Database className="text-green-400 mb-2" size={24} />
+                <span className="text-sm font-medium">Data Engineering</span>
               </div>
               <div className="p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center text-center">
-                <Zap className="text-accent mb-2" size={24} />
-                <span className="text-sm font-medium">Performance</span>
+                <Server className="text-purple-400 mb-2" size={24} />
+                <span className="text-sm font-medium">API Development</span>
               </div>
             </div>
           </motion.div>
@@ -138,7 +138,7 @@ const About = () => {
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="h-full bg-accent rounded-full"
+                        className="h-full bg-blue-500 rounded-full"
                       />
                     </div>
                   </div>
@@ -164,8 +164,14 @@ const About = () => {
                 className="p-6 rounded-xl bg-card border border-border transition-all hover:shadow-md"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="p-2 rounded-md bg-accent/10">
-                    <Briefcase className="text-accent h-5 w-5" />
+                  <div className="p-2 rounded-md bg-blue-500/10">
+                    {index === 0 ? (
+                      <Globe className="text-blue-400 h-5 w-5" />
+                    ) : index === 1 ? (
+                      <LineChart className="text-green-400 h-5 w-5" />
+                    ) : (
+                      <BarChart className="text-purple-400 h-5 w-5" />
+                    )}
                   </div>
                   <div>
                     <h4 className="font-medium">{exp.title}</h4>

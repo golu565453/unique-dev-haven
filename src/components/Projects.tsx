@@ -1,33 +1,36 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, Code, Database, LineChart } from "lucide-react";
 import { ButtonCustom } from "@/components/ui/button-custom";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A fully-featured online shopping platform with cart, checkout, and payment integration.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Data Analysis Dashboard",
+    description: "A comprehensive dashboard for visualizing complex datasets with interactive charts and filterable views.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    tags: ["Python", "Pandas", "Plotly", "Dash"],
     liveLink: "#",
-    repoLink: "#"
+    repoLink: "#",
+    icon: <LineChart className="h-10 w-10 text-blue-400" />
   },
   {
-    title: "Task Management App",
-    description: "A productivity application for organizing tasks with drag-and-drop functionality.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    tags: ["React", "TypeScript", "Firebase", "Material UI"],
+    title: "E-commerce API",
+    description: "A high-performance RESTful API for e-commerce applications with authentication and payment processing.",
+    image: "https://images.unsplash.com/photo-1556742212-5b321f3c261b",
+    tags: ["Django", "DRF", "PostgreSQL", "Docker"],
     liveLink: "#",
-    repoLink: "#"
+    repoLink: "#",
+    icon: <Code className="h-10 w-10 text-green-400" />
   },
   {
-    title: "Finance Dashboard",
-    description: "Interactive dashboard for tracking financial data with charts and analytics.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    tags: ["Vue.js", "D3.js", "Express", "MySQL"],
+    title: "Machine Learning Pipeline",
+    description: "An automated pipeline for data preprocessing, model training, evaluation and deployment.",
+    image: "https://images.unsplash.com/photo-1456428746267-a1756408f782",
+    tags: ["Python", "scikit-learn", "TensorFlow", "MLflow"],
     liveLink: "#",
-    repoLink: "#"
+    repoLink: "#",
+    icon: <Database className="h-10 w-10 text-purple-400" />
   }
 ];
 
@@ -72,7 +75,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold text-foreground mb-4"
           >
-            Featured Projects
+            Python Projects
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +84,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            A selection of my recent work showcasing my skills and experience in building web applications.
+            A selection of my recent Python development work showcasing my skills in web development, data science, and machine learning.
           </motion.p>
         </div>
         
@@ -104,24 +107,25 @@ const Projects = () => {
                   alt={project.title} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                    <ButtonCustom 
-                      variant="ghost" 
-                      size="sm" 
-                      className="bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
-                    >
-                      Live Demo
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </ButtonCustom>
-                    <ButtonCustom 
-                      variant="ghost" 
-                      size="sm" 
-                      className="bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
-                    >
-                      <Github className="h-4 w-4" />
-                    </ButtonCustom>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center">
+                  {project.icon}
+                </div>
+                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+                  <ButtonCustom 
+                    variant="ghost" 
+                    size="sm" 
+                    className="bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
+                  >
+                    Demo
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </ButtonCustom>
+                  <ButtonCustom 
+                    variant="ghost" 
+                    size="sm" 
+                    className="bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
+                  >
+                    <Github className="h-4 w-4" />
+                  </ButtonCustom>
                 </div>
               </div>
               <div className="p-6">
@@ -131,7 +135,7 @@ const Projects = () => {
                   {project.tags.map((tag, tagIndex) => (
                     <span 
                       key={tagIndex}
-                      className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent/80"
+                      className="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-500/80"
                     >
                       {tag}
                     </span>
@@ -139,7 +143,7 @@ const Projects = () => {
                 </div>
                 <a 
                   href="#" 
-                  className="inline-flex items-center text-sm font-medium text-accent group/link"
+                  className="inline-flex items-center text-sm font-medium text-blue-500 group/link"
                 >
                   View Details
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />

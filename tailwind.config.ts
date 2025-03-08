@@ -57,6 +57,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				display: ['SF Pro Display', 'Inter', 'sans-serif'],
+				mono: ['Fira Code', 'monospace'],
 			},
 			keyframes: {
 				'fade-in': {

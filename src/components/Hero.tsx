@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Code, Terminal, Database } from "lucide-react";
 import { ButtonCustom } from "@/components/ui/button-custom";
 
 const Hero = () => {
@@ -19,7 +19,7 @@ const Hero = () => {
                 transition={{ duration: 0.5 }}
               >
                 <span className="inline-block px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium tracking-wide mb-4">
-                  Full-Stack Developer
+                  Python Developer
                 </span>
               </motion.div>
               
@@ -29,7 +29,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance"
               >
-                Creating digital <span className="text-gradient">experiences</span> with precision
+                Building <span className="text-gradient">powerful</span> solutions with Python
               </motion.h1>
               
               <motion.p
@@ -38,9 +38,8 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-muted-foreground text-lg max-w-xl leading-relaxed mt-4"
               >
-                I design and build applications with a focus on simplicity, 
-                usability, and performance. Every line of code is crafted 
-                with attention to detail.
+                I specialize in creating efficient, scalable applications using Python and its 
+                powerful ecosystem. From data science to web development, I bring ideas to life.
               </motion.p>
             </div>
             
@@ -65,10 +64,15 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 lg:order-2 aspect-square relative"
           >
-            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-secondary border border-accent/10">
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531297484001-80022131f5a1')] bg-cover bg-center opacity-70 mix-blend-overlay"></div>
+            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-secondary border border-blue-500/10">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb')] bg-cover bg-center opacity-70 mix-blend-overlay"></div>
               <div className="absolute inset-0 backdrop-blur-sm"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 p-6">
+                <Terminal className="w-16 h-16 text-blue-400 animate-float" />
+                <Code className="w-16 h-16 text-green-400 animate-float" style={{ animationDelay: "1s" }} />
+                <Database className="w-16 h-16 text-purple-400 animate-float" style={{ animationDelay: "2s" }} />
+              </div>
             </div>
           </motion.div>
         </div>
